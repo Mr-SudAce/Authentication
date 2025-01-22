@@ -15,7 +15,7 @@ def home():
     style.configure("TEntry", font=("Arial", 12))
 
     # Add a title label
-    lbl_title = ttk.Label(root, text="Welcome", font=("Arial", 16, "bold"), foreground="blue")
+    lbl_title = ttk.Label(root, text="Welcome", font=("Arial", 20, "bold"), foreground="black")
     lbl_title.pack(pady=10)
 
     # Email
