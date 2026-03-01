@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register</title>
+<style>
+:root {
+  --color-bg: #0F172A;
+  --color-surface: #1E293B;
+  --color-text-primary: #E2E8F0;
+  --color-text-secondary: #94A3B8;
+  --color-accent: #38BDF8;
+  --color-accent-hover: #0EA5E9;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--color-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.auth-card {
+  background-color: var(--color-surface);
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  width: 100%;
+  max-width: 400px;
+  margin: 2rem 0;
+}
+h2 {
+  text-align: center;
+  color: var(--color-text-primary);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-text-secondary);
+  border-radius: 0.5rem;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-size: 1rem;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(56,189,248,0.2);
+}
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.2s;
+}
+button:hover {
+  background-color: var(--color-accent-hover);
+}
+.auth-link {
+  display: block;
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.auth-link:hover {
+  text-decoration: underline;
+}
+</style>
+</head>
+<body>
+<div class="auth-card">
+  <h2>Register</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Register</button>
+  </form>
+  <a href="{% url 'login' %}" class="auth-link">Already have an account? Login here</a>
+</div>
+</body>
+</html>
